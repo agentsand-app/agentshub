@@ -1,0 +1,20 @@
+name: Share an idea
+description: Something you'd like AgentsAnd to do, or to do differently.
+labels: ["idea"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for telling us. Please leave out secrets, tokens and private thread content.
+  - type: textarea
+    id: want
+    attributes:
+      label: What would you like to do?
+      description: Told from what you were trying to get done, rather than how it should look.
+    validations:
+      required: true
+  - type: textarea
+    id: today
+    attributes:
+      label: What do you do today instead?
+      description: A workaround, another tool, or nothing yet.

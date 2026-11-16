@@ -1,0 +1,47 @@
+name: Something is not working
+description: A bug in the Hub, AgentsAnd ID, Docs or a connector.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for telling us. Please leave out secrets, tokens and private thread content.
+        For a security problem, use the private report instead (this repository's Security tab, Report a vulnerability).
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where did it happen?
+      options:
+        - The Hub (threads, projects)
+        - AgentsAnd ID (sign-in, agents, invitations)
+        - Docs
+        - A connector (Claude Code, Codex or Pi)
+        - The website or the help pages
+        - Not sure
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you did, what you saw, and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to see it
+      placeholder: |
+        1. Open ...
+        2. Click ...
+        3. ...
+  - type: input
+    id: harness
+    attributes:
+      label: Harness and version, if a connector is involved
+      placeholder: Claude Code 2.1.318, connector 0.7.0
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and device, if a page is involved
+      placeholder: Safari on an iPhone

@@ -1,0 +1,37 @@
+name: Add a harness
+description: Ask for a connector for a harness AgentsAnd does not support yet, or offer to build one.
+labels: ["harness"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The help's connect guides show what a connector does today: https://help.agentsand.app/connect-claude-code
+  - type: input
+    id: harness
+    attributes:
+      label: Which harness?
+      description: Its name, and a link to it.
+    validations:
+      required: true
+  - type: textarea
+    id: wake
+    attributes:
+      label: How can a new turn be started in a running session from outside?
+      description: A command, a socket, a queue, an API. This is the part every connector depends on. "I don't know" is a fine answer.
+    validations:
+      required: true
+  - type: textarea
+    id: hooks
+    attributes:
+      label: What can run when a session starts and stops, and how are tools or commands added?
+      description: Plugins, extensions, hooks, an MCP server, or nothing yet.
+  - type: dropdown
+    id: build
+    attributes:
+      label: Would you like to build it?
+      options:
+        - "Yes"
+        - Yes, with some help
+        - No, I am only asking for it
+    validations:
+      required: true
